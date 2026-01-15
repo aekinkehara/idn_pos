@@ -13,5 +13,5 @@ final List<Product> menus = [
   Product(name: "Es Teh", price: 5000),
   Product(name: "Es Jeruk", price: 7000),
   Product(name: "Americano", price: 8000),
-  Product(name: "Air Mineral", price: 4000),
+  Product(name: "Air Mineral", price: 4000)
 ];
