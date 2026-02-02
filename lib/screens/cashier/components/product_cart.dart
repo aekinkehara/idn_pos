@@ -8,6 +8,7 @@ class ProductCart extends StatelessWidget {
   final VoidCallback onAdd;
   final VoidCallback onRemove;
 
+
   const ProductCart({super.key, required this.product, required this.qty, required this.onAdd, required this.onRemove});
 
   @override
@@ -36,7 +37,7 @@ class ProductCart extends StatelessWidget {
               textAlign: TextAlign.center,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)
             ),
           ),
           SizedBox(height: 5),
@@ -44,41 +45,41 @@ class ProductCart extends StatelessWidget {
             formatRupiah(product.price),
             style: TextStyle(
               color: Colors.grey[600],
-              fontSize: 12
+              fontSize: 12,
             ),
           ),
           SizedBox(height: 10),
           // button penambahan item
-          if (qty == 0)
+          if (qty == 0 )
             InkWell(
               onTap: onAdd,
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                 decoration: BoxDecoration(color: Color(0xFFF5F7FA), borderRadius: BorderRadius.circular(20)),
                 child: Text(
-                  "Tambah",
-                  style: TextStyle(color: Colors.blueAccent, fontWeight: FontWeight.bold),
+                  'Tambah',
+                  style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
                 ),
               ),
             )
-            else 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _counterBtn(Icons.remove, onRemove),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: Text(
-                      "$qty",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16
-                      ),
-                    ),
+          else
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _counterBtn(Icons.remove, onRemove),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: Text(
+                  "$qty",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16
                   ),
-                  _counterBtn(Icons.add, onAdd)
-                ],
-              )
+                ),
+              ),
+              _counterBtn(Icons.add, onAdd)
+            ],
+          )
         ],
       ),
     );
